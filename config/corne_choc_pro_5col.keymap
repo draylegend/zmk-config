@@ -85,10 +85,10 @@
             //   left:  Ctrl . Alt Shift (A D F)    right: Shift Alt . Ctrl (J K ;), mirrored.
             //   Right Alt is LALT, not RALT: RALT is AltGr on a German layout.
             // Win: middle left thumb (Win+Shift+S: Win thumb, Shift F, S ring finger; all left hand).
-            // Esc: under Tab. Left Alt (D) + Shift (F) held together switch the Windows language.
+            // Esc: above Tab (left centre keys). Left Alt (D) + Shift (F) held together switch the Windows language.
             bindings = <
-                &kp Q            &kp W            &kp E            &kp R             &kp T &kp TAB  &kp BSPC &kp Y &kp U            &kp I            &kp O            &kp P
-                &hrm LCTRL A     &kp S            &hrm LALT D      &hrm LSHFT F      &kp G &kp ESC   &kp RET &kp H &hrm RSHFT J       &hrm LALT K      &kp L            &hrm RCTRL SEMI
+                &kp Q            &kp W            &kp E            &kp R             &kp T &kp ESC  &kp BSPC &kp Y &kp U            &kp I            &kp O            &kp P
+                &hrm LCTRL A     &kp S            &hrm LALT D      &hrm LSHFT F      &kp G &kp TAB   &kp RET &kp H &hrm RSHFT J       &hrm LALT K      &kp L            &hrm RCTRL SEMI
                 &kp Z            &kp X            &kp C            &kp V             &kp B                &kp N &kp M             &kp COMMA        &kp DOT          &kp FSLH
                                                          &kp LA(LSHFT) &kp LGUI &lt NAV SPACE                         &mo SYM &mo NUM &mo ADJUST
             >;
