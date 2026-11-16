@@ -82,12 +82,13 @@
         default_layer {
             display-name = "QWERTY";
             // Home row mods follow the order of a regular keyboard:
-            //   left only: Ctrl . Alt Shift (the mouse is in the right hand, so no right-hand mods)
+            //   left:  Ctrl . Alt Shift (A D F)    right: Shift Alt . Ctrl (J K ;), mirrored.
+            //   Right Alt is LALT, not RALT: RALT is AltGr on a German layout.
             // Win: middle left thumb (Win+Shift+S: Win thumb, Shift F, S ring finger; all left hand).
             // Esc: under Tab. Left Alt (D) + Shift (F) held together switch the Windows language.
             bindings = <
                 &kp Q            &kp W            &kp E            &kp R             &kp T &kp TAB  &kp BSPC &kp Y &kp U            &kp I            &kp O            &kp P
-                &hrm LCTRL A     &kp S            &hrm LALT D      &hrm LSHFT F      &kp G &kp ESC   &kp RET &kp H &kp J              &kp K            &kp L            &kp SEMI
+                &hrm LCTRL A     &kp S            &hrm LALT D      &hrm LSHFT F      &kp G &kp ESC   &kp RET &kp H &hrm RSHFT J       &hrm LALT K      &kp L            &hrm RCTRL SEMI
                 &kp Z            &kp X            &kp C            &kp V             &kp B                &kp N &kp M             &kp COMMA        &kp DOT          &kp FSLH
                                                          &kp LA(LSHFT) &kp LGUI &lt NAV SPACE                         &mo SYM &mo NUM &mo ADJUST
             >;
@@ -110,12 +111,13 @@
             display-name = "NUM";
             // Left: F1-F12 in reading order, then PrtSc, ScrLk, Pause.
             // Right: numpad block, "0" on the big inner thumb and "=" on the outer one (the
-            // middle thumb is the NUM key itself, held). No separate "." "," "-": the base keys
-            // stay reachable through the transparent cells to the right of the digits.
+            // middle thumb is the NUM key itself, held). Operators to the right of the digits, from
+            // the bottom up: * and / (bottom row), + and - (middle row). They are keypad keys, so
+            // they type the same sign in the German and the Russian layout and ignore Shift.
             bindings = <
                 &kp F1  &kp F2  &kp F3    &kp F4   &kp F5            &trans &trans   &kp N7 &kp N8 &kp N9 &none &none
-                &kp F6  &kp F7  &kp F8    &kp F9   &kp F10           &trans &trans   &kp N4 &kp N5 &kp N6 &none &none
-                &kp F11 &kp F12 &kp PSCRN &kp SLCK &kp PAUSE_BREAK                   &kp N1 &kp N2 &kp N3 &trans &trans
+                &kp F6  &kp F7  &kp F8    &kp F9   &kp F10           &trans &trans   &kp N4 &kp N5 &kp N6 &kp KP_PLUS &kp KP_MINUS
+                &kp F11 &kp F12 &kp PSCRN &kp SLCK &kp PAUSE_BREAK                   &kp N1 &kp N2 &kp N3 &kp KP_ASTERISK &kp KP_SLASH
                                           &trans &trans &trans                       &kp N0 &trans &kp LS(N0)
             >;
         };
@@ -170,8 +172,8 @@
 
         lol_layer {
             display-name = "LOL";
-            // F1-F4 select self and allies, 4 and 2 are item slots, Q W E R are the abilities.
-            // H is under the 2. Tab and Esc (the two left centre keys) show through from BASE.
+            // F1-F4 select the four allies (rebind them in the game; the camera on yourself is Space), 4 and 2 are item slots, Q W E R are the abilities.
+            // H (the ping "Enemy has vision") is under the 2. Tab and Esc (the two left centre keys) show through from BASE.
             // The mouse hand reaches the top right corner: V (ward, the support key; corner), then item 1 and item 3.
             // P sits on the right big thumb key. The top centre key on the right leaves the layer.
             bindings = <
